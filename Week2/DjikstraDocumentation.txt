@@ -1,0 +1,45 @@
+Link to the original repository - https://github.com/BhavaniAM/Data_Structures_and_Algorithms/blob/main/Graphs/Dijkstra's%20Algorithm/Dijkstra.c 
+
+This C program implements Dijkstra's algorithm to find the shortest path in a graph. It uses an adjacency list to represent the graph and a min heap to efficiently select the minimum distance vertex. The program reads graph data from a file, constructs the graph, and then computes the shortest path from a specified source vertex to all other vertices. The results are written to an output file. The main functions include creating graph structures, managing the min heap, and performing Dijkstra's algorithm.
+
+Here is a brief explanation of each function in the provided C program:
+
+1. struct node* new_adj_list_node(int dest_vertex, int weight);
+   Creates a new node for the adjacency list with a given destination vertex and weight.
+
+2. struct Graph* create_graph(int num_V);
+   Initializes a graph with a specified number of vertices and returns a pointer to the graph.
+
+3. struct min_heap_node* new_mh_node(int vertex, int dist);
+   Creates a new node for the min heap with a specified vertex and initial distance.
+
+4. struct min_heap* create_mh(int c);
+   Initializes a min heap with a specified capacity and returns a pointer to it.
+
+5. void insert_into_adj_list(struct Graph* graph, int src_vertex, int dest_vertex, int weight);
+   Adds an edge from the source vertex to the destination vertex with a specified weight in the graph.
+
+6. void swap_mh_node(struct min_heap_node** node_1, struct min_heap_node** node_2);
+   Swaps two nodes in the min heap to maintain heap properties.
+
+7. void convert_to_min_heap(struct min_heap* mini_h, int i);
+   Converts a subtree rooted at index i into a min heap.
+
+8. int heap_is_empty(struct min_heap* h);
+   Checks if the min heap is empty.
+
+9. void decrement_key(struct min_heap* h, int vertex, int dist);
+   Decreases the distance value of a given vertex and updates its position in the min heap.
+
+10. int is_present(struct min_heap *h, int vertex);
+    Checks if a specified vertex is present in the min heap.
+
+11. void print_func(int dist[], int n);
+    Prints the shortest distance from the source to all other vertices and writes the results to a file.
+
+12. void dijkstra(struct Graph* graph, int src_vertex);
+    Implements Dijkstra's algorithm to find the shortest path from the source vertex to all other vertices.
+
+The main function is as follows:
+int main(int argc, char* argv[]);
+   - Reads input from a file, initializes the graph, inserts edges, and calls the Dijkstra function to find the shortest paths.
